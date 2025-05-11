@@ -1,0 +1,44 @@
+@media (min-width: 640px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav,
+    footer,
+    header {
+        width: 100%;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #menuBtn {
+        display: none;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        max-width: 80vw;
+    }
+
+    main > section:nth-child(3) {
+        grid-column: span 2;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .last-item {
+        grid-column: 1/3;
+        justify-items: center;
+    }
+    .course-card {
+        max-width: 300px;
+    }
+}

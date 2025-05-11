@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Homepage for Ezra Casas's WDD231 course projects"
+        />
+        <meta name="author" content="Ezra Casas" />
+        <title>Ezra Casas | WDD231</title>
+        <link rel="stylesheet" href="styles/normalize.css" />
+        <link rel="stylesheet" href="styles/small.css" />
+        <link
+            rel="stylesheet"
+            href="styles/large.css"
+            media="(min-width: 640px)"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap"
+        />
+        <script src="scripts/navigation.js" defer></script>
+        <script src="scripts/date.js" defer></script>
+        <script src="scripts/course.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <img src="images/cat.webp" alt="Ezra Casas" />
+            <span>Ezra Casas</span>
+            <button id="menuBtn" aria-label="Open menu">&#9776;</button>
+        </header>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">Final</a></li>
+                <li><a href="https://github.com/ezra-casas">GitHub</a></li>
+                <li>
+                    <a href="https://linkedin.com/in/ezra-casas">LinkedIn</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Home</h1>
+            <div class="container">
+                <section>
+                    <h2>Course Work</h2>
+                    <ul>
+                        <li>•</li>
+                        <li>•</li>
+                        <li>•</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Osaka, Japan</h2>
+                    <img src="images/baobab.jpg" alt="Osaka Castle" />
+                    <p>Osaka Castle</p>
+                </section>
+
+                <section class="last-item">
+                    <h2>Web and Computer Programming Certificate</h2>
+                    <div id="filter-buttons">
+                        <button data-filter="all">All</button>
+                        <button data-filter="CSE">CSE</button>
+                        <button data-filter="WDD">WDD</button>
+                    </div>
+                    <div id="courses"></div>
+                    <p>Total Credits: <span id="totalCredits"></span></p>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; <span id="currentyear"></span> Ezra Casas 🏯 Japan</p>
+            <p id="lastModified"></p>
+        </footer>
+    </body>
+</html>
