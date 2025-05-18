@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Osaka Sushi Co.",
+    "address": "123 Sushi Lane, Osaka",
+    "phone": "+81 6-1234-5678",
+    "website": "https://osakasushi.example.com",
+    "image": "sushi-icon.png",
+    "membership": 3,
+    "description": "Authentic Japanese sushi restaurant in the heart of Osaka."
+  },
+  {
+    "name": "TechTrend Innovations",
+    "address": "456 Tech Street, Osaka",
+    "phone": "+81 6-8765-4321",
+    "website": "https://techtrend.example.com",
+    "image": "tech-icon.png",
+    "membership": 2,
+    "description": "Leading technology firm specializing in AI solutions."
+  }
+
+]

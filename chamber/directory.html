@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta name="description" content="Directory of businesses in the Osaka Chamber of Commerce, showcasing local enterprises in Osaka, Japan." >
+  <meta name="author" content="Your Full Name" >
+  <title>Osaka Chamber of Commerce - Directory</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Osaka Chamber of Commerce Directory" >
+  <meta property="og:description" content="Explore businesses in Osaka, Japan, through the Osaka Chamber of Commerce directory." >
+  <meta property="og:image" content="https://your-repo-url/chamber/images/osaka-chamber-logo.jpg" >
+  <meta property="og:url" content="https://your-repo-url/chamber/directory.html" >
+  <meta property="og:type" content="website" >
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" type="image/png" >
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" >
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" >
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/small.css" >
+  <link rel="stylesheet" href="styles/large.css" media="(min-width: 640px)" >
+
+
+</head>
+<body>
+  <header>
+    <h1>Osaka Chamber of Commerce</h1>
+  </header>
+
+  <nav id="mainNav">
+      <ul>
+          <li><a href="../index.html" >Home</a></li>
+          <li><a href="#" class="active">Chamber</a></li>
+          <li><a href="#">Final</a></li>
+          <li><a href="https://github.com/ezra-casas">GitHub</a></li>
+          <li>
+              <a href="https://linkedin.com/in/ezra-casas">LinkedIn</a>
+          </li>
+      </ul>
+  </nav>
+
+  <main class="container">
+    <section class="controls">
+      <button onclick="setGridView()">Grid View</button>
+      <button onclick="setListView()">List View</button>
+    </section>
+
+    <section id="member-list" class="grid-view">
+      <div class="member-card">
+        <h3>Osaka Sushi Co.</h3>
+        <p>Authentic Japanese sushi restaurant in the heart of Osaka.</p>
+        <p><strong>Phone:</strong> +81 6-1234-5678</p>
+        <p><strong>Website:</strong> <a href="https://osakasushi.example.com">osakasushi.example.com</a></p>
+      </div>
+      <div class="member-card">
+        <h3>TechTrend Innovations</h3>
+        <p>Leading technology firm specializing in AI solutions.</p>
+        <p><strong>Phone:</strong> +81 6-8765-4321</p>
+        <p><strong>Website:</strong> <a href="https://techtrend.example.com">techtrend.example.com</a></p>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+@media (min-width: 640px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    max-width: 1100px;
+  }
+
+  .controls {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .controls button {
+    width: auto;
+  }
+
+  .grid-view {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}

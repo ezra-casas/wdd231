@@ -1,19 +1,33 @@
-/* Typography and colors */
+:root {
+  --primary-color: #234;
+  --accent-color: #ffd700;
+  --text-dark: #222;
+  --bg-light: #f9f9f9;
+  --card-bg: #fff;
+}
+* {
+  box-sizing: border-box;
+}
 body {
     font-family: "Open Sans", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fefefe;
-    color: #222;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+header,
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
 }
 
+
 header {
-    background-color: #234;
-    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem;
 }
 
 header img {
@@ -34,14 +48,20 @@ header span {
     font-size: 2rem;
     cursor: pointer;
 }
+nav {
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+}
 
 nav ul {
     display: none;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
     flex-direction: column;
-    background-color: #234;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 1rem;
+    align-items: center;
 }
 
 nav.open ul {
@@ -49,15 +69,15 @@ nav.open ul {
 }
 
 nav a {
-    color: white;
     text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
     padding: 1rem;
-    display: block;
-}
+    e
 
 nav a.active,
 nav a:hover {
-    background-color: #456;
+    color: #007bff;ee
 }
 
 main {
