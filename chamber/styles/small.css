@@ -165,6 +165,9 @@ footer a {
     gap: 1rem;
     margin: 0.5rem 0;
 }
+.social-icons img{
+    width: 20px;
+}
 #menuBtn {
     background: none;
     border: none;
