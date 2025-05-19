@@ -1,28 +1,42 @@
 @media (min-width: 640px) {
-  nav ul {
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
-  }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 
-  header h1 {
-    font-size: 2rem;
-  }
+    header h1 {
+        font-size: 2rem;
+    }
 
-  .container {
-    max-width: 1100px;
-  }
+    .container {
+        max-width: 1100px;
+    }
 
-  .controls {
-    flex-direction: row;
-    justify-content: center;
-  }
+    .controls {
+        flex-direction: row;
+        justify-content: center;
+    }
 
-  .controls button {
-    width: auto;
-  }
+    .controls button {
+        width: auto;
+    }
 
-  .grid-view {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  }
+    .grid-view {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    #member-list.grid-view {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #menuBtn{
+        display: none;
+    }
+
+    .member-card {
+        text-align: left;
+    }
+
+    #view-toggle {
+        justify-content: flex-end;
+    }
 }

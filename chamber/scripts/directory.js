@@ -1,58 +1,53 @@
-
-const memberList = document.getElementById('member-list');
+const memberList = document.getElementById("member-list");
 
 function setGridView() {
-  memberList.classList.remove('list-view');
-  memberList.classList.add('grid-view');
+  memberList.classList.remove("list-view");
+  memberList.classList.add("grid-view");
 }
 
 function setListView() {
-  memberList.classList.remove('grid-view');
-  memberList.classList.add('list-view');
+  memberList.classList.remove("grid-view");
+  memberList.classList.add("list-view");
 }
 
-// Load members from JSON
 async function loadMembers() {
   try {
-    const response = await fetch('data/members.json');
+    const response = await fetch("./data/members.json");
     const members = await response.json();
     displayMembers(members);
   } catch (error) {
-    console.error('Failed to load member data:', error);
+    console.error("Failed to load member data:", error);
   }
 }
 
 function displayMembers(members) {
-  memberList.innerHTML = '';
-  members.forEach(member => {
-    const card = document.createElement('div');
-    card.classList.add('member-card');
+  memberList.innerHTML = "";
+  members.forEach((member) => {
+    const card = document.createElement("div");
+    card.classList.add("member-card");
 
     card.innerHTML = `
       <h3>${member.name}</h3>
-      <p><strong>Membership:</strong> ${getMembershipLevel(member.membership)}</p>
-      <p>${member.description}</p>
-      <p><strong>Address:</strong> ${member.address}</p>
+      <p><em>${member.tagline}</em></p>
+      <img src="./images/${member.image}" alt="${member.name}" loading="lazy">
+      <p><strong>Email:</strong> <a href="mailto:${member.email}">${member.email}</a></p>
       <p><strong>Phone:</strong> ${member.phone}</p>
       <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
-      <img src="images/${member.image}" alt="${member.name} logo" style="max-width: 100px; margin-top: 0.5rem;">
-      `;
+    `;
 
     memberList.appendChild(card);
   });
 }
 
-function getMembershipLevel(level) {
-  switch (level) {
-    case 1: return "Member";
-    case 2: return "Silver";
-    case 3: return "Gold";
-    default: return "Unknown";
-  }
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const nav = document.querySelector("nav");
 
-// Footer dates
-document.getElementById('last-modified').textContent = document.lastModified;
+  menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
+});
 
-// Run the data loader
+
+document.getElementById("last-modified").textContent = document.lastModified;
 loadMembers();

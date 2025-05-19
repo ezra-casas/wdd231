@@ -1,21 +1,79 @@
 [
   {
     "name": "Osaka Sushi Co.",
+    "tagline": "Traditional taste since 1955",
     "address": "123 Sushi Lane, Osaka",
     "phone": "+81 6-1234-5678",
+    "email": "info@osakasushi.jp",
     "website": "https://osakasushi.example.com",
-    "image": "sushi-icon.png",
+    "image": "sushi.webp",
     "membership": 3,
     "description": "Authentic Japanese sushi restaurant in the heart of Osaka."
   },
   {
     "name": "TechTrend Innovations",
-    "address": "456 Tech Street, Osaka",
+    "tagline": "Empowering Smart Futures",
+    "address": "456 Tech Blvd, Osaka",
     "phone": "+81 6-8765-4321",
+    "email": "contact@techtrend.jp",
     "website": "https://techtrend.example.com",
-    "image": "tech-icon.png",
+    "image": "tech.webp",
     "membership": 2,
-    "description": "Leading technology firm specializing in AI solutions."
+    "description": "Leading technology firm specializing in AI solutions and digital transformation."
+  },
+  {
+    "name": "Osaka Craft Market",
+    "tagline": "Artisans Unite",
+    "address": "789 Market St, Osaka",
+    "phone": "+81 6-2233-8899",
+    "email": "hello@osakacrafts.jp",
+    "website": "https://craftosaka.example.com",
+    "image": "market.webp",
+    "membership": 1,
+    "description": "A vibrant marketplace featuring local crafts and handmade goods from Osaka's artisans."
+  },
+  {
+    "name": "GreenTech Gardens",
+    "tagline": "Grow Smart, Grow Green",
+    "address": "12 Greenway Blvd, Osaka",
+    "phone": "+81 6-9988-7744",
+    "email": "support@greentech.jp",
+    "website": "https://greentech.example.com",
+    "image": "gardens.webp",
+    "membership": 2,
+    "description": "Urban gardening solutions and smart irrigation systems for modern homes."
+  },
+  {
+    "name": "Zen Yoga Studio",
+    "tagline": "Find Your Balance",
+    "address": "321 Peace St, Osaka",
+    "phone": "+81 6-1122-3344",
+    "email": "info@zenyoga.jp",
+    "website": "https://zenyoga.example.com",
+    "image": "yoga.webp",
+    "membership": 1,
+    "description": "A relaxing studio offering beginner to advanced yoga and meditation classes."
+  },
+  {
+    "name": "Osaka Book Haven",
+    "tagline": "Read. Learn. Discover.",
+    "address": "654 Story Ln, Osaka",
+    "phone": "+81 6-4433-2211",
+    "email": "contact@bookhaven.jp",
+    "website": "https://bookhaven.example.com",
+    "image": "book.webp",
+    "membership": 3,
+    "description": "An independent bookstore offering a wide selection of local and international titles."
+  },
+  {
+    "name": "Cycle Osaka",
+    "tagline": "Explore on Two Wheels",
+    "address": "777 Cycle Park, Osaka",
+    "phone": "+81 6-5678-1234",
+    "email": "ride@cycleosaka.jp",
+    "website": "https://cycleosaka.example.com",
+    "image": "bike.webp",
+    "membership": 2,
+    "description": "Bike rentals and guided cycling tours around Osaka’s most scenic routes."
   }
-
 ]

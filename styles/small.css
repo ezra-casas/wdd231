@@ -8,6 +8,7 @@
 * {
   box-sizing: border-box;
 }
+
 body {
     font-family: "Open Sans", sans-serif;
     margin: 0;
@@ -15,6 +16,7 @@ body {
     background-color: var(--bg-light);
     color: var(--text-dark);
 }
+
 header,
 footer {
   background-color: var(--primary-color);
@@ -22,7 +24,6 @@ footer {
   padding: 1rem 0;
   text-align: center;
 }
-
 
 header {
     display: flex;
@@ -48,6 +49,7 @@ header span {
     font-size: 2rem;
     cursor: pointer;
 }
+
 nav {
   background-color: white;
   border-bottom: 1px solid #ccc;
@@ -56,7 +58,6 @@ nav {
 nav ul {
     display: none;
     list-style: none;
-    display: flex;
     flex-direction: column;
     gap: 0.5rem;
     margin: 0;
@@ -68,16 +69,16 @@ nav.open ul {
     display: flex;
 }
 
+nav a.active,
+nav a:hover {
+    color: #007bff;
+}
+
 nav a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: 600;
     padding: 1rem;
-    e
-
-nav a.active,
-nav a:hover {
-    color: #007bff;ee
 }
 
 main {
@@ -122,8 +123,7 @@ section {
 }
 
 footer {
-    background-color: #234;
-    color: white;
+
     text-align: center;
     padding: 1rem;
 }
