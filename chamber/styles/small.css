@@ -186,3 +186,117 @@ footer a {
     top: 1rem;
     right: 1rem;
 }
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.events, .weather, .spotlights{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    
+}
+
+.event-card, #weather-data{
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 0 8px 0 8px;
+}
+
+#forefast-cards{
+    display: flex;
+    justify-content: space-between; 
+}
+.hero {
+    position: relative;
+    text-align: center;
+}
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.hero-overlay h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #007b8f;
+}
+
+.spotlight-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.spotlight-card {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.spotlight-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.spotlight-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.spotlight-card a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.spotlight-card a:hover {
+    text-decoration: underline;
+}
+
+.spotlight-card .tagline {
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.spotlight-card .description {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+.navigation {
+    display: none;
+}
+
+.navigation.open {
+    display: block;
+}

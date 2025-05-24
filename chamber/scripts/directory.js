@@ -1,4 +1,6 @@
 const memberList = document.getElementById("member-list");
+const isChamber = document.getElementsByClassName("active")[0].innerHTML.toLowerCase === "Chamber".toLowerCase;
+
 
 function setGridView() {
   memberList.classList.remove("list-view");
@@ -50,4 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.getElementById("last-modified").textContent = document.lastModified;
-loadMembers();
+
+
+if(isChamber){
+  loadMembers();
+}

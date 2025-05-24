@@ -19,8 +19,11 @@
             property="og:description"
             content="Explore businesses in Osaka, Japan, through the Osaka Chamber of Commerce directory."
         />
-<meta property="og:image" content="images/osaka-castle.png" />
-<meta property="og:url" content="https://ezra-casas.github.io/wdd231/chamber/directory.html" />
+        <meta property="og:image" content="images/osaka-castle.png" />
+        <meta
+            property="og:url"
+            content="https://ezra-casas.github.io/wdd231/chamber/directory.html"
+        />
 
         <meta property="og:type" content="website" />
 
@@ -45,18 +48,21 @@
 
         <!-- script -->
         <script src="./scripts/directory.js" defer></script>
+        <script src="./scripts/weather.js" defer></script>
+        <script src="./scripts/spotlight.js" defer></script>
     </head>
     <body>
+
         <header>
-            <img src="images/cat.webp" alt="Ezra Casas" >
+            <img src="images/cat.webp" alt="Ezra Casas" />
             <span>Ezra Casas</span>
             <button id="menuBtn" aria-label="Open menu">&#9776;</button>
         </header>
 
         <nav id="mainNav">
             <ul>
-                 <li><a href="./index.html" >Home</a></li>
-                <li><a href="./directory.html" class="active">Chamber</a></li>
+                 <li><a href="./index.html" class="active">Home</a></li>
+                <li><a href="./directory.html" >Chamber</a></li>
                 <li><a href="#">Final</a></li>
                 <li><a href="https://github.com/ezra-casas">GitHub</a></li>
                 <li>
@@ -64,19 +70,52 @@
                 </li>
             </ul>
         </nav>
-        <main class="directory">
-            <h1>Osaka Chamber of Commerce</h1>
 
-            <section id="view-toggle">
-                <button onclick="setGridView()">Grid View</button>
-                <button onclick="setListView()">List View</button>
+        <main>
+            <section class="hero">
+                <img
+                    src="./images/osaka-cityscape.avif"
+                    alt="Osaka cityscape"
+                    class="hero-image"
+                />
+                <div class="hero-overlay">
+                    <h2>Welcome to Osaka Chamber of Commerce</h2>
+                    <a href="join.html" class="cta-button">Join the Chamber</a>
+                </div>
             </section>
 
-            <section id="member-list" class="grid-view">
-                <!-- Dynamic member cards get injected here -->
+            <section class="events">
+                <h2>Upcoming Events</h2>
+                <div class="event-card">
+                    <h3>Business Networking Mixer</h3>
+                    <p>Date: June 10, 2025</p>
+                    <p>Location: Osaka Convention Center</p>
+                    <p>
+                        Join us for an evening of networking with local
+                        businesses.
+                    </p>
+                </div>
+            </section>
+
+            <section class="weather">
+                <h2>Current Weather in Osaka</h2>
+                <div id="weather-data">
+                    <p>
+                        Current Temperature: <span id="current-temp"></span>°C
+                    </p>
+                    <p>Condition: <span id="weather-desc"></span></p>
+                    <div id="forecast">
+                        <h3>3-Day Forecast</h3>
+                        <div id="forecast-cards"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="spotlights">
+                <h2>Member Spotlights</h2>
+                <div id="spotlight-container" class="spotlight-grid"></div>
             </section>
         </main>
-
         <footer>
             <p>
                 <strong>Osaka Chamber of Commerce</strong><br />
@@ -86,11 +125,14 @@
 
             <div class="social-icons">
                 <!-- You can add actual icons using <img> or font-awesome -->
-                <span><img src="./images/youtube-icon.png" alt="youtube"></span>
-                <span><img src="./images/x-icon.png" alt="x" ></span>
-                <span><img src="./images/linkedin-icon.png" alt="linkedin"></span>
+                <span
+                    ><img src="./images/youtube-icon.png" alt="youtube"
+                /></span>
+                <span><img src="./images/x-icon.png" alt="x" /></span>
+                <span
+                    ><img src="./images/linkedin-icon.png" alt="linkedin"
+                /></span>
             </div>
-
             <p>
                 WDD231 Class Project<br />Your Name<br />&copy; 2025 Osaka
                 Chamber of Commerce
