@@ -9,6 +9,11 @@
         font-size: 2rem;
     }
 
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+    }
     .container {
         max-width: 1100px;
     }
