@@ -1,7 +1,7 @@
 // Set last modified date
 document.getElementById("last-modified").textContent = document.lastModified;
 
-// const apiKey = "c3110f449717d52885e2a7cfdcb4f398";
+const apiKey = "c3110f449717d52885e2a7cfdcb4f398";
 const city = "Osaka,JP";
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
