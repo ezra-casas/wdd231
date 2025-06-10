@@ -1,0 +1,35 @@
+main.thankyou {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Open Sans", sans-serif;
+}
+
+main.thankyou h1 {
+    color: var(--primary-color, #234);
+    text-align: center;
+}
+
+main.thankyou ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+main.thankyou li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+main.thankyou li strong {
+    color: var(--primary-color, #234);
+}
+
+main.thankyou p:last-child {
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: bold;
+    color: #444;
+}

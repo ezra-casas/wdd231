@@ -1,6 +1,7 @@
 const memberList = document.getElementById("member-list");
-const isChamber = document.getElementsByClassName("active")[0].innerHTML.toLowerCase === "Chamber".toLowerCase;
-
+const isChamber =
+  document.getElementsByClassName("active")[0].innerHTML.toLowerCase ===
+  "Chamber".toLowerCase;
 
 function setGridView() {
   memberList.classList.remove("list-view");
@@ -49,11 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.classList.toggle("open");
   });
 });
-
-
 document.getElementById("last-modified").textContent = document.lastModified;
-
-
-if(isChamber){
+if (isChamber) {
   loadMembers();
 }

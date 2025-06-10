@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thank You - Osaka Chamber of Commerce</title>
+        <link rel="stylesheet" href="./styles/thankyou.css" />
+        <link rel="stylesheet" href="./styles/normalize.css" />
+        <link rel="stylesheet" href="./styles/small.css" />
+        <link
+            rel="stylesheet"
+            href="./styles/large.css"
+            media="(min-width: 640px)"
+        />
+        <script src="./scripts/thankyou.js" defer></script>
+        <script src="./scripts/lastModified.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <img src="./images/cat.webp" alt="Ezra Casas" />
+            <span>Ezra Casas</span>
+            <button id="menuBtn" aria-label="Open menu">&#9776;</button>
+        </header>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./directory.html">Chamber</a></li>
+                <li><a href="#">Final</a></li>
+                <li><a href="https://github.com/ezra-casas">GitHub</a></li>
+                <li>
+                    <a href="https://linkedin.com/in/ezra-casas">LinkedIn</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="thankyou">
+            <h1>Thank You for Joining!</h1>
+            <p>
+                We appreciate your interest in becoming a member of the Osaka
+                Chamber of Commerce. Here's what you submitted:
+            </p>
+
+            <ul>
+                <li><strong>Full Name:</strong> <span id="fullName"></span></li>
+                <li><strong>Email:</strong> <span id="email"></span></li>
+                <li><strong>Phone:</strong> <span id="phone"></span></li>
+                <li><strong>Organization:</strong> <span id="org"></span></li>
+                <li>
+                    <strong>Submitted on:</strong> <span id="timestamp"></span>
+                </li>
+            </ul>
+
+            <p>We will review your application and contact you shortly.</p>
+        </main>
+
+        <footer>
+            <p>
+                <strong>Osaka Chamber of Commerce</strong><br />Osaka, Japan<br />info@osakachamber.org
+                | +81 6-5555-5555
+            </p>
+            <div class="social-icons">
+                <span
+                    ><img src="./images/youtube-icon.png" alt="youtube"
+                /></span>
+                <span><img src="./images/x-icon.png" alt="x" /></span>
+                <span
+                    ><img src="./images/linkedin-icon.png" alt="linkedin"
+                /></span>
+            </div>
+            <p>
+                WDD231 Project<br />Ezra Casas<br />&copy; 2025 Osaka Chamber of
+                Commerce
+            </p>
+            <p>Last Modification: <span id="last-modified"></span></p>
+        </footer>
+
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const fname = params.get("fname") || "";
+            const lname = params.get("lname") || "";
+            document.getElementById("fullName").textContent =
+                `${fname} ${lname}`.trim();
+            document.getElementById("email").textContent =
+                params.get("email") || "N/A";
+            document.getElementById("phone").textContent =
+                params.get("phone") || "N/A";
+            document.getElementById("org").textContent =
+                params.get("org") || "N/A";
+            document.getElementById("timestamp").textContent =
+                params.get("timestamp") || new Date().toISOString();
+            document.getElementById("last-modified").textContent =
+                document.lastModified;
+        </script>
+    </body>
+</html>

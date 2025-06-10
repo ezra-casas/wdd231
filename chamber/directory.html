@@ -19,8 +19,11 @@
             property="og:description"
             content="Explore businesses in Osaka, Japan, through the Osaka Chamber of Commerce directory."
         />
-<meta property="og:image" content="./images/osaka-castle.png" />
-<meta property="og:url" content="https://ezra-casas.github.io/wdd231/chamber/directory.html" />
+        <meta property="og:image" content="./images/osaka-castle.png" />
+        <meta
+            property="og:url"
+            content="https://ezra-casas.github.io/wdd231/chamber/directory.html"
+        />
 
         <meta property="og:type" content="website" />
 
@@ -48,15 +51,16 @@
     </head>
     <body>
         <header>
-            <img src="./images/cat.webp" alt="Ezra Casas" >
+            <img src="./images/cat.webp" alt="Ezra Casas" />
             <span>Ezra Casas</span>
             <button id="menuBtn" aria-label="Open menu">&#9776;</button>
         </header>
 
         <nav id="mainNav">
             <ul>
-                 <li><a href="./index.html" >Home</a></li>
+                <li><a href="./index.html">Home</a></li>
                 <li><a href="./directory.html" class="active">Chamber</a></li>
+                <li><a href="./join.html">Join</a></li>
                 <li><a href="#">Final</a></li>
                 <li><a href="https://github.com/ezra-casas">GitHub</a></li>
                 <li>
@@ -72,9 +76,8 @@
                 <button onclick="setListView()">List View</button>
             </section>
 
-            <section id="member-list" class="grid-view">
-                <!-- Dynamic member cards get injected here -->
-            </section>
+            <!-- Dynamic cards injected here -->
+            <section id="member-list" class="grid-view"></section>
         </main>
 
         <footer>
@@ -85,15 +88,18 @@
             </p>
 
             <div class="social-icons">
-                <!-- You can add actual icons using <img> or font-awesome -->
-                <span><img src="./images/youtube-icon.png" alt="youtube"></span>
-                <span><img src="./images/x-icon.png" alt="x" ></span>
-                <span><img src="./images/linkedin-icon.png" alt="linkedin"></span>
+                <span
+                    ><img src="./images/youtube-icon.png" alt="youtube"
+                /></span>
+                <span><img src="./images/x-icon.png" alt="x" /></span>
+                <span
+                    ><img src="./images/linkedin-icon.png" alt="linkedin"
+                /></span>
             </div>
 
             <p>
-                WDD231 Project<br />Ezra Casas<br />&copy; 2025 Osaka
-                Chamber of Commerce
+                WDD231 Project<br />Ezra Casas<br />&copy; 2025 Osaka Chamber of
+                Commerce
             </p>
             <p>Last Modification: <span id="last-modified"></span></p>
         </footer>

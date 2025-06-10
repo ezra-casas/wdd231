@@ -1,0 +1,143 @@
+/* Layout adjustments */
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color, #234);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #007b8f;
+}
+
+/* Membership Cards */
+.membership-cards {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .membership-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.card {
+    background-color: #f0f8ff;
+    border: 2px solid #dde;
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeSlideIn 0.8s ease forwards;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--primary-color, #234);
+}
+
+.card button {
+    background-color: var(--accent-color, #ffd700);
+    color: #234;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #ffc300;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dialog styles */
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 500px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: 2px solid #007b8f;
+    outline-offset: 2px;
+}
