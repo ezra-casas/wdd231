@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Osaka Castle",
+    "address": "1-1 Osakajo, Chuo Ward, Osaka",
+    "description": "Iconic historic castle surrounded by beautiful gardens and moats.",
+    "image": "../images/osaka-castle.avif"
+  },
+  {
+    "name": "Dotonbori",
+    "address": "Dotonbori, Chuo Ward, Osaka",
+    "description": "Famous nightlife district with neon lights and delicious street food.",
+    "image": "../images/dotonbori.avif"
+  },
+  {
+    "name": "Umeda Sky Building",
+    "address": "1-1-88 Oyodonaka, Kita Ward, Osaka",
+    "description": "Striking skyscraper with an observation deck offering panoramic city views.",
+    "image": "../images/umeda-sky.avif"
+  },
+  {
+    "name": "Shitennoji Temple",
+    "address": "1-11-18 Shitennoji, Tennoji Ward, Osaka",
+    "description": "One of Japan’s oldest temples, founded in 593 by Prince Shotoku.",
+    "image": "../images/shitennoji.avif"
+  },
+  {
+    "name": "Osaka Aquarium Kaiyukan",
+    "address": "1-1-10 Kaigandori, Minato Ward, Osaka",
+    "description": "One of the world's largest aquariums featuring marine life from the Pacific Rim.",
+    "image": "../images/kaiyukan.avif"
+  },
+  {
+    "name": "Sumiyoshi Taisha",
+    "address": "2-9-89 Sumiyoshi, Sumiyoshi Ward, Osaka",
+    "description": "Ancient Shinto shrine with distinctive architecture and a peaceful atmosphere.",
+    "image": "../images/sumiyoshi.avif"
+  },
+  {
+    "name": "Namba Yasaka Shrine",
+    "address": "2-9-19 Motomachi, Naniwa Ward, Osaka",
+    "description": "Unique shrine known for its giant lion-head stage and local festivals.",
+    "image": "../images/yasaka.avif"
+  },
+  {
+    "name": "Tennoji Zoo",
+    "address": "1-108 Chausuyamacho, Tennoji Ward, Osaka",
+    "description": "Family-friendly zoo with animals from around the globe in natural habitats.",
+    "image": "../images/tennoji-zoo.avif "
+  }
+]

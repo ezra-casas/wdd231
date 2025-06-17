@@ -59,4 +59,20 @@
     .hero-overlay h2 {
         font-size: 2.5rem;
     }
+    /* Discover */
+    .cards-grid {
+        grid-template-areas:
+            "card1 card2 card3"
+            "card4 card5 card6"
+            "card7 card8 card8";
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .attraction-card img {
+        width: 400px;
+    }
+    .attraction-card img:hover {
+        filter: brightness(0.8);
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+    }
 }
