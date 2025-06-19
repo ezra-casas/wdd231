@@ -69,6 +69,15 @@ function stopTimer() {
 
 function updateTimerLoop() {
   const msElapsed = Date.now() - startTime;
+  const totalSeconds = Math.floor(msElapsed / 1000);
+  const maxTime = getMaxTime();
+
+  if (totalSeconds >= maxTime) {
+    stopTimer(); // Stop and save
+    updateTimerDisplay(maxTime * 1000); // Ensure it's capped at max time visually
+    return;
+  }
+
   updateTimerDisplay(msElapsed);
 }
 
@@ -180,13 +189,24 @@ const inputWrapper = document.querySelector(".input-wrapper");
 
 taskInput.addEventListener("input", () => {
   const length = taskInput.value.length;
-  inputWrapper.setAttribute("data-count", `${length}/60`);
+  inputWrapper.setAttribute("data-count", `${length}/20`);
+
+  if (length < 10) {
+    inputWrapper.setAttribute("data-count-color", "normal");
+  } else if (length < 17) {
+    inputWrapper.setAttribute("data-count-color", "warning");
+  } else {
+    inputWrapper.setAttribute("data-count-color", "danger");
+  }
 });
 
 // Set initial value
 const length = taskInput.value.length;
 inputWrapper.setAttribute("data-count", `${length}/20`);
-
+inputWrapper.setAttribute(
+  "data-count-color",
+  length < 10 ? "normal" : length < 17 ? "warning" : "danger",
+);
 // Init and update progress ring
 updateProgressRing(elapsedTime);
 loadRecentSessions();
