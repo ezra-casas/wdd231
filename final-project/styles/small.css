@@ -436,7 +436,7 @@ button:hover {
     color: var(--text-color);
     padding: 2rem;
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
     max-width: 90%;
     width: 320px;
 }
