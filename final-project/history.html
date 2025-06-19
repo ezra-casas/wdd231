@@ -7,16 +7,15 @@
             const savedTheme = localStorage.getItem("theme") || "light";
             document.documentElement.setAttribute("data-theme", savedTheme);
         </script>
-        <title>TrackerCraft</title>
+        <title>Tracker History</title>
         <link rel="stylesheet" href="./styles/small.css" />
         <link rel="stylesheet" href="./styles/large.css" />
-
         <script src="./scripts/nav.js" defer></script>
-        <script src="./scripts/script.js" defer></script>
+        <script src="./scripts/history.js" defer></script>
     </head>
     <body>
         <header>
-            <h1>TrackerCraft</h1>
+            <h1>History</h1>
         </header>
 
         <nav class="navbar">
@@ -25,28 +24,15 @@
                 <button id="navToggle" aria-label="Toggle menu">☰</button>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="./index.html" class="active">Tracker</a></li>
-                <li><a href="./history.html">History</a></li>
+                <li><a href="./index.html">Tracker</a></li>
+                <li><a href="./history.html" class="active">History</a></li>
                 <li><a href="./settings.html">Settings</a></li>
             </ul>
         </nav>
 
         <main>
-            <label for="taskInput">What are you working on?</label>
-            <input
-                type="text"
-                id="taskInput"
-                placeholder="Enter task name..."
-            />
-
-            <div id="timer">00:00:00</div>
-
-            <div class="buttons">
-                <button id="startBtn">Start</button>
-                <button id="pauseResumeBtn" disabled>Pause</button>
-                <button id="stopBtn" disabled>Stop</button>
-            </div>
-            <section id="lastSessions" style="margin-top: 2rem"></section>
+            <section id="historyContainer"></section>
+            <button id="clearHistoryBtn">Clear History</button>
         </main>
     </body>
 </html>

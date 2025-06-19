@@ -1,0 +1,52 @@
+@media (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .nav-header {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    #navToggle {
+        display: none; /* hide hamburger on large screens */
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        gap: 1.5rem;
+        margin: 0;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 1rem;
+        text-align: center;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+
+    .nav-links a:hover {
+        background-color: var(--accent-color);
+        color: var(--button-text);
+    }
+    body {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .nav-links a:hover {
+        background-color: var(--accent-color);
+        color: var(--button-text);
+    }
+    main {
+        align-self: center;
+    }
+}

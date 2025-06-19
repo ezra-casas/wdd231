@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Time Tracker</title>
+        <link rel="stylesheet" href="./styles/small.css" />
+        <link rel="stylesheet" href="./styles/large.css" />
+        <script src="./scripts/nav.js" defer></script>
+        <script src="./scripts/settings.js" defer></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-header">
+                <h1 class="site-title">TrackerCraft</h1>
+                <button id="navToggle" aria-label="Toggle menu">☰</button>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./index.html">Tracker</a></li>
+                <li><a href="./history.html">History</a></li>
+                <li>
+                    <a href="./settings.html" class="active">Settings</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <section style="margin-top: 2rem">
+                <button id="resetDefaultsBtn">Reset to Defaults</button>
+            </section>
+
+            <!-- Theme -->
+            <section>
+                <h2>Theme</h2>
+                <label class="switch">
+                    <input type="checkbox" id="themeToggle" />
+                    <span class="slider"></span>
+                    <span class="switch-label">Dark Mode</span>
+                </label>
+            </section>
+
+            <!-- Time Format -->
+            <section style="margin-top: 2rem">
+                <h2>Time Format</h2>
+                <label class="toggle-format">
+                    <input type="checkbox" id="timeFormatToggle" />
+                    <span class="slider-format"></span>
+                    <span class="format-label" id="formatLabel">24-hour</span>
+                </label>
+            </section>
+
+            <section style="margin-top: 2rem">
+                <h2>Coming Soon</h2>
+                <p>
+                    Additional preferences like time format, notifications, etc.
+                </p>
+            </section>
+        </main>
+    </body>
+</html>
