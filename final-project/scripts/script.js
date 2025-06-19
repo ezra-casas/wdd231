@@ -1,3 +1,6 @@
+import { setupNavToggle } from "./nav.js";
+setupNavToggle();
+
 let startTime = null;
 let intervalId = null;
 let elapsedTime = 0;

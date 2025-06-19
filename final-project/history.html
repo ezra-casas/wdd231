@@ -3,6 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="History page to change theme, etc." />
+        <meta name="author" content="Ezra Casas" />
+        <meta property="og:title" content="TrackerCraft" />
+        <meta
+            property="og:description"
+            content="History page to view past entries."
+        />
         <script>
             const savedTheme = localStorage.getItem("theme") || "light";
             document.documentElement.setAttribute("data-theme", savedTheme);
@@ -10,8 +17,8 @@
         <title>Tracker History</title>
         <link rel="stylesheet" href="./styles/small.css" />
         <link rel="stylesheet" href="./styles/large.css" />
-        <script src="./scripts/nav.js" defer></script>
-        <script src="./scripts/history.js" defer></script>
+        <script type="module" src="./scripts/nav.js" defer></script>
+        <script type="module" src="./scripts/history.js" defer></script>
     </head>
     <body>
         <nav class="navbar">

@@ -1,6 +1,8 @@
-const navToggle = document.getElementById("navToggle");
-const navLinks = document.getElementById("navLinks");
+export function setupNavToggle() {
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
 
-navToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-});
+  navToggle?.addEventListener("click", () => {
+    navLinks?.classList.toggle("open");
+  });
+}

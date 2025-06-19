@@ -1,3 +1,6 @@
+import { setupNavToggle } from "./nav.js";
+setupNavToggle();
+
 const historyContainer = document.getElementById("historyContainer");
 const clearBtn = document.getElementById("clearHistoryBtn");
 

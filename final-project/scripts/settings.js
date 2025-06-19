@@ -1,3 +1,6 @@
+import { setupNavToggle } from "./nav.js";
+setupNavToggle();
+
 const toggle = document.getElementById("themeToggle");
 const formatToggle = document.getElementById("timeFormatToggle");
 const formatLabel = document.getElementById("formatLabel");
