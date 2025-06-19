@@ -51,8 +51,27 @@ function clearHistory() {
   historyContainer.innerHTML = "<p>No history available.</p>";
 }
 
+const modal = document.getElementById("confirmModal");
+const confirmBtn = document.getElementById("confirmClearBtn");
+const cancelBtn = document.getElementById("cancelClearBtn");
+
 clearBtn.addEventListener("click", () => {
+  modal.classList.remove("hidden");
+});
+
+confirmBtn.addEventListener("click", () => {
   localStorage.removeItem("timeTrackerHistory");
-  location.reload();
+  modal.classList.add("hidden");
+  loadHistory();
+});
+
+cancelBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    modal.classList.add("hidden");
+  }
 });
 loadHistory();

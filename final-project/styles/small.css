@@ -6,6 +6,9 @@
     --accent-color: #007bff;
     --button-bg: var(--accent-color);
     --button-text: white;
+    --danger-bg: #e53500;
+    --danger-text: #121212;
+    --danger-border: #e53500;
 }
 
 [data-theme="dark"] {
@@ -16,6 +19,9 @@
     --accent-color: #66b2ff;
     --button-bg: var(--accent-color);
     --button-text: #181818;
+    --danger-bg: #ff440a;
+    --danger-text: #121212;
+    --danger-border: #ff440a;
 }
 
 /* Base styles */
@@ -406,4 +412,50 @@ button:hover {
 
 .delete-entry:hover {
     color: #e00;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    width: 320px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+
+.modal button {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+}
+#confirmClearBtn {
+    background-color: var(--danger-bg);
+    color: white;
+    font-weight: bold;
+}
+#cancelClearBtn {
+    font-weight: bold;
 }

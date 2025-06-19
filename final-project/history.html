@@ -37,5 +37,26 @@
             <section id="historyContainer"></section>
             <button id="clearHistoryBtn">Clear History</button>
         </main>
+
+        <div
+            id="confirmModal"
+            class="modal hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+            aria-describedby="modalDesc"
+        >
+            <div class="modal-content">
+                <h2 id="modalTitle">Confirm Clear History</h2>
+                <p id="modalDesc">
+                    Are you sure you want to permanently delete all tracked
+                    history?
+                </p>
+                <div class="modal-buttons">
+                    <button id="confirmClearBtn">Confirm</button>
+                    <button id="cancelClearBtn">Cancel</button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
