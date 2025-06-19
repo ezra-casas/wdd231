@@ -38,9 +38,13 @@
         background-color: var(--accent-color);
         color: var(--button-text);
     }
+
     body {
         align-items: flex-start;
         justify-content: flex-start;
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
     }
     .nav-links a:hover {
         background-color: var(--accent-color);
@@ -48,5 +52,8 @@
     }
     main {
         align-self: center;
+    }
+    .history-item {
+        padding: 1rem 2rem 1rem 2rem;
     }
 }

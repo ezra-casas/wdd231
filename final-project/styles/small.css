@@ -24,10 +24,8 @@ body {
     color: var(--text-color);
     font-family: sans-serif;
     text-align: center;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
+    padding: 0;
+    margin: 0;
     align-items: center;
     gap: 2rem;
     justify-content: center;
@@ -58,6 +56,31 @@ input {
     border: 1px solid var(--border-color);
     background-color: var(--card-bg);
     color: var(--text-color);
+}
+
+.input-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+}
+
+#taskInput {
+    width: 100%;
+    padding-right: 3rem; /* Create room for char count */
+    box-sizing: border-box;
+}
+
+.input-wrapper::after {
+    content: attr(data-count);
+    position: absolute;
+    top: 70%;
+    right: 1rem;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    pointer-events: none;
 }
 
 /* Timer */
@@ -263,4 +286,97 @@ input:checked + .slider::before {
 
 button:hover {
     filter: brightness(1.1);
+}
+
+/* progress ring */
+.progress-ring-container {
+    position: relative;
+    height: 180px;
+    margin: 0 auto;
+    padding: 18px;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg,
+.progress-ring-fill {
+    fill: none;
+    stroke-width: 8;
+    r: 70;
+    cx: 80;
+    cy: 80;
+}
+
+.progress-ring-bg {
+    stroke: var(--border-color);
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -85%);
+    font-weight: bold;
+    color: var(--text-color);
+    text-shadow:
+        0 0 4px rgba(0, 0, 0, 0.3),
+        0 0 2px rgba(0, 0, 0, 0.3);
+}
+.progress-ring-fill {
+    stroke-linecap: round;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    stroke: currentColor;
+    transition:
+        stroke-dashoffset 0.5s linear,
+        stroke 0.3s ease,
+        filter 0.3s ease;
+}
+[data-theme="dark"] .progress-ring-fill {
+    filter: drop-shadow(0 0 4px currentColor);
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.5),
+        0 0 2px rgba(255, 255, 255, 0.3);
+}
+/* Progress ring */
+
+/* history items */
+.delete-entry {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-entry:hover {
+    color: var(--accent-color);
+}
+
+.history-item {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background-color: var(--card-bg);
+}
+
+.delete-entry {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.delete-entry:hover {
+    color: #e00;
 }

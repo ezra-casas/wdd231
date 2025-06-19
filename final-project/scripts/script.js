@@ -10,47 +10,48 @@ const stopBtn = document.getElementById("stopBtn");
 const taskInput = document.getElementById("taskInput");
 const lastSessionsContainer = document.getElementById("lastSessions");
 
-// Event Listeners
+const ring = document.querySelector(".progress-ring-fill");
+const radius = 70;
+const circumference = 2 * Math.PI * radius;
+
+if (ring) {
+  ring.style.strokeDasharray = `${circumference}`;
+  ring.style.strokeDashoffset = `${circumference}`;
+}
+
 startBtn.addEventListener("click", startTimer);
 pauseResumeBtn.addEventListener("click", togglePause);
 stopBtn.addEventListener("click", stopTimer);
 
-// Optional: react to setting changes live
 window.addEventListener("storage", (event) => {
   if (event.key === "timeFormat") {
     updateTimerDisplay(Date.now() - startTime);
   }
 });
 
-function startTimer() {
-  if (!startTime) {
-    startTime = Date.now();
-  } else {
-    startTime = Date.now() - elapsedTime;
-  }
+function getMaxTime() {
+  return (parseInt(localStorage.getItem("maxTimeSelected"), 10) || 15) * 60;
+}
 
-  intervalId = setInterval(updateTimerDisplayLoop, 1000);
+function startTimer() {
+  startTime = startTime ? Date.now() - elapsedTime : Date.now();
+  intervalId = setInterval(updateTimerLoop, 1000);
   isPaused = false;
 
-  taskInput.disabled = true;
-  startBtn.disabled = true;
-  pauseResumeBtn.disabled = false;
-  pauseResumeBtn.textContent = "Pause";
-  stopBtn.disabled = false;
+  updateUIOnStart();
 }
 
 function togglePause() {
-  if (!isPaused) {
+  if (isPaused) {
+    startTime = Date.now() - elapsedTime;
+    intervalId = setInterval(updateTimerLoop, 1000);
+    pauseResumeBtn.textContent = "Pause";
+  } else {
     clearInterval(intervalId);
     elapsedTime = Date.now() - startTime;
     pauseResumeBtn.textContent = "Continue";
-    isPaused = true;
-  } else {
-    startTime = Date.now() - elapsedTime;
-    intervalId = setInterval(updateTimerDisplayLoop, 1000);
-    pauseResumeBtn.textContent = "Pause";
-    isPaused = false;
   }
+  isPaused = !isPaused;
 }
 
 function stopTimer() {
@@ -66,10 +67,97 @@ function stopTimer() {
   loadRecentSessions();
 }
 
-function resetTimerState() {
-  startTime = null;
-  elapsedTime = 0;
-  isPaused = false;
+function updateTimerLoop() {
+  const msElapsed = Date.now() - startTime;
+  updateTimerDisplay(msElapsed);
+}
+
+function updateTimerDisplay(ms) {
+  const totalSeconds = Math.floor(ms / 1000);
+  timerDisplay.textContent = formatElapsedTime(totalSeconds);
+  updateProgressRing(totalSeconds);
+}
+
+function formatElapsedTime(seconds) {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${pad(mins)}:${pad(secs)}`;
+}
+
+function pad(num) {
+  return String(num).padStart(2, "0");
+}
+
+function updateProgressRing(elapsedSeconds) {
+  if (!ring) return;
+
+  const percent = Math.min(elapsedSeconds / getMaxTime(), 1);
+  const offset = circumference * (1 - percent);
+  ring.style.strokeDashoffset = offset;
+
+  const [r, g, b] = getProgressColor(percent);
+  const rgb = `rgb(${r}, ${g}, ${b})`;
+  ring.style.color = rgb;
+  ring.style.filter = getGlow(rgb, percent);
+}
+
+function getProgressColor(percent) {
+  if (percent < 0.5) {
+    const progress = percent / 0.5;
+    return [255, Math.round(255 * progress), 0];
+  } else {
+    const progress = (percent - 0.5) / 0.5;
+    return [
+      Math.round(255 * (1 - progress)),
+      255 - Math.round(127 * progress),
+      0,
+    ];
+  }
+}
+
+function getGlow(rgb, percent) {
+  return document.documentElement.getAttribute("data-theme") === "dark"
+    ? `drop-shadow(0 0 ${6 + percent * 8}px ${rgb})`
+    : `drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2))`;
+}
+
+function saveCurrentTask() {
+  const taskName = taskInput.value.trim() || "Unnamed Task";
+  const entry = {
+    task: taskName,
+    duration: timerDisplay.textContent,
+    timestamp: new Date().toISOString(),
+  };
+  const history = JSON.parse(localStorage.getItem("timeTrackerHistory")) || [];
+  history.push(entry);
+  localStorage.setItem("timeTrackerHistory", JSON.stringify(history));
+}
+
+function loadRecentSessions() {
+  const history = JSON.parse(localStorage.getItem("timeTrackerHistory")) || [];
+  const recent = history.slice(-3).reverse();
+
+  lastSessionsContainer.innerHTML = "<h3>Last Sessions</h3>";
+  if (recent.length === 0) {
+    lastSessionsContainer.innerHTML += "<p>No recent sessions</p>";
+    return;
+  }
+
+  const list = document.createElement("ul");
+  for (const { task, duration, timestamp } of recent) {
+    const li = document.createElement("li");
+    li.innerHTML = `<strong>${task}</strong> — ${duration}<br><small>${new Date(timestamp).toLocaleString()}</small>`;
+    list.appendChild(li);
+  }
+  lastSessionsContainer.appendChild(list);
+}
+
+function updateUIOnStart() {
+  taskInput.disabled = true;
+  startBtn.disabled = true;
+  pauseResumeBtn.disabled = false;
+  pauseResumeBtn.textContent = "Pause";
+  stopBtn.disabled = false;
 }
 
 function updateUIAfterReset() {
@@ -81,71 +169,24 @@ function updateUIAfterReset() {
   taskInput.value = "";
 }
 
-function updateTimerDisplayLoop() {
-  const currentTime = Date.now();
-  const diff = currentTime - startTime;
-  updateTimerDisplay(diff);
+function resetTimerState() {
+  startTime = null;
+  elapsedTime = 0;
+  isPaused = false;
+  if (ring) ring.style.strokeDashoffset = `${circumference}`;
 }
 
-function updateTimerDisplay(ms) {
-  const totalSeconds = Math.floor(ms / 1000);
-  timerDisplay.textContent = formatElapsedTime(totalSeconds);
-}
+const inputWrapper = document.querySelector(".input-wrapper");
 
-function formatElapsedTime(seconds) {
-  const hrs = Math.floor(seconds / 3600);
-  const mins = Math.floor((seconds % 3600) / 60);
-  const secs = seconds % 60;
+taskInput.addEventListener("input", () => {
+  const length = taskInput.value.length;
+  inputWrapper.setAttribute("data-count", `${length}/60`);
+});
 
-  const format = localStorage.getItem("timeFormat") || "24";
-  if (format === "12") {
-    const ampm = hrs >= 12 ? "PM" : "AM";
-    const hr12 = ((hrs + 11) % 12) + 1; // converts 0–23 to 1–12
-    return `${pad(hr12)}:${pad(mins)}:${pad(secs)} ${ampm}`;
-  }
+// Set initial value
+const length = taskInput.value.length;
+inputWrapper.setAttribute("data-count", `${length}/20`);
 
-  return `${pad(hrs)}:${pad(mins)}:${pad(secs)}`;
-}
-
-function pad(num) {
-  return String(num).padStart(2, "0");
-}
-
-function saveCurrentTask() {
-  const taskName = taskInput.value.trim() || "Unnamed Task";
-  const duration = timerDisplay.textContent;
-  const timestamp = new Date().toISOString();
-
-  const entry = { task: taskName, duration, timestamp };
-  const history = JSON.parse(localStorage.getItem("timeTrackerHistory")) || [];
-  history.push(entry);
-  localStorage.setItem("timeTrackerHistory", JSON.stringify(history));
-}
-
-function loadRecentSessions() {
-  const history = JSON.parse(localStorage.getItem("timeTrackerHistory")) || [];
-  const recent = history.slice(-3).reverse();
-
-  lastSessionsContainer.innerHTML = "<h3>Last Sessions</h3>";
-
-  if (recent.length === 0) {
-    lastSessionsContainer.innerHTML += "<p>No recent sessions</p>";
-    return;
-  }
-
-  const list = document.createElement("ul");
-  recent.forEach(({ task, duration, timestamp }) => {
-    const date = new Date(timestamp);
-    const li = document.createElement("li");
-    li.innerHTML = `
-      <strong>${task}</strong> — ${duration}<br>
-      <small>${date.toLocaleString()}</small>
-    `;
-    list.appendChild(li);
-  });
-
-  lastSessionsContainer.appendChild(list);
-}
-
-// Load previous sessions on startup
+// Init and update progress ring
+updateProgressRing(elapsedTime);
 loadRecentSessions();

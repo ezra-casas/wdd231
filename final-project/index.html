@@ -3,25 +3,23 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script>
-            const savedTheme = localStorage.getItem("theme") || "light";
-            document.documentElement.setAttribute("data-theme", savedTheme);
-        </script>
         <title>TrackerCraft</title>
+        <script>
+            document.documentElement.setAttribute(
+                "data-theme",
+                localStorage.getItem("theme") || "light",
+            );
+        </script>
+
         <link rel="stylesheet" href="./styles/small.css" />
         <link rel="stylesheet" href="./styles/large.css" />
-
         <script src="./scripts/nav.js" defer></script>
         <script src="./scripts/script.js" defer></script>
     </head>
     <body>
-        <header>
-            <h1>TrackerCraft</h1>
-        </header>
-
         <nav class="navbar">
             <div class="nav-header">
-                <h1 class="site-title">Time Tracker</h1>
+                <h1 class="site-title">TrackerCraft</h1>
                 <button id="navToggle" aria-label="Toggle menu">☰</button>
             </div>
             <ul class="nav-links" id="navLinks">
@@ -32,20 +30,33 @@
         </nav>
 
         <main>
-            <label for="taskInput">What are you working on?</label>
-            <input
-                type="text"
-                id="taskInput"
-                placeholder="Enter task name..."
-            />
+            <section>
+                <label for="taskInput">What are you working on?</label>
+                <div class="input-wrapper" data-count="0/20">
+                    <input
+                        type="text"
+                        id="taskInput"
+                        maxlength="20"
+                        placeholder="Task name ..."
+                        style="margin-top: 2rem"
+                    />
+                </div>
+            </section>
 
-            <div id="timer">00:00:00</div>
+            <section class="progress-ring-container">
+                <svg class="progress-ring" width="160" height="160">
+                    <circle class="progress-ring-bg" r="70" cx="80" cy="80" />
+                    <circle class="progress-ring-fill" r="70" cx="80" cy="80" />
+                </svg>
+                <div id="timer" class="progress-text">00:00</div>
+            </section>
 
-            <div class="buttons">
+            <section class="buttons">
                 <button id="startBtn">Start</button>
                 <button id="pauseResumeBtn" disabled>Pause</button>
                 <button id="stopBtn" disabled>Stop</button>
-            </div>
+            </section>
+
             <section id="lastSessions" style="margin-top: 2rem"></section>
         </main>
     </body>

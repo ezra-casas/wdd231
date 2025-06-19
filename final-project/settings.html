@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Time Tracker</title>
+
         <link rel="stylesheet" href="./styles/small.css" />
         <link rel="stylesheet" href="./styles/large.css" />
         <script src="./scripts/nav.js" defer></script>
@@ -18,9 +19,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="./index.html">Tracker</a></li>
                 <li><a href="./history.html">History</a></li>
-                <li>
-                    <a href="./settings.html" class="active">Settings</a>
-                </li>
+                <li><a href="./settings.html" class="active">Settings</a></li>
             </ul>
         </nav>
 
@@ -29,7 +28,6 @@
                 <button id="resetDefaultsBtn">Reset to Defaults</button>
             </section>
 
-            <!-- Theme -->
             <section>
                 <h2>Theme</h2>
                 <label class="switch">
@@ -39,7 +37,6 @@
                 </label>
             </section>
 
-            <!-- Time Format -->
             <section style="margin-top: 2rem">
                 <h2>Time Format</h2>
                 <label class="toggle-format">
@@ -50,10 +47,21 @@
             </section>
 
             <section style="margin-top: 2rem">
+                <h2>Timer - Minutes</h2>
+                <label class="max-time">
+                    <input
+                        type="number"
+                        id="maxTimeInput"
+                        min="1"
+                        max="120"
+                        value="15"
+                    />
+                </label>
+            </section>
+
+            <section style="margin-top: 2rem">
                 <h2>Coming Soon</h2>
-                <p>
-                    Additional preferences like time format, notifications, etc.
-                </p>
+                <p>Additional preferences like notifications, etc.</p>
             </section>
         </main>
     </body>
